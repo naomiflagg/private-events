@@ -1,23 +1,23 @@
 <h2>My events</h2>
 <h3>Hosted events</h3>
 <ul>
-  <% @user.created_events.each do |event| %>
-    <li>
-      Event name: <%= event.name %><br>
-      Date: <%= event.date %><br>
-      Location: <%= event.location %><br>
-    </li>
+ <h4>Upcoming events</h4>
+  <% @user.created_events.upcoming.each do |event| %>
+    <li><%= render partial: 'details', locals: { event: event }%></li>
+  <% end %>
+  <h4>Past events</h4>
+  <% @user.created_events.past.each do |event| %>
+    <li><%= render 'details', locals: { event: event } %></li>
   <% end %>
 </ul>
 <h3>Invited events</h3>
 <ul>
-  <% @user.invited_events.each do |event| %>
-  <li>
-      Event name: <%= event.name %><br>
-      Date: <%= event.date %><br>
-      Location: <%= event.location %><br>
-      <% creator = User.find(event.creator_id) %>
-      Host: <%= creator.name %><br>
-    </li>
+  <h4>Upcoming events</h4>
+  <% @user.invited_events.upcoming.each do |event| %>
+    <li><%= render partial: 'details', locals: { event: event }%></li>
+  <% end %>
+  <h4>Past events</h4>
+  <% @user.invited_events.past.each do |event| %>
+    <li><%= render 'details', locals: { event: event } %></li>
   <% end %>
 </ul>

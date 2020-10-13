@@ -1,9 +1,5 @@
 <ul>
-  <li><%= @event.name %></li>
-  <li><%= @event.date %></li>
-  <li><%= @event.location %></li>
-  <% creator = User.find(@event.creator_id) %>
-  <li>Host:<%= creator.name %></li>
+  <li><%= render partial: 'details', locals: { event: @event } %></li>
   <li>Invitees: 
     <ul>
       <% @event.invitees.each do |invitee| %>

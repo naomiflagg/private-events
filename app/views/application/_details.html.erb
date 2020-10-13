@@ -1,0 +1,5 @@
+Event name: <%= event.name %><br>
+Date: <%= event.date %><br>
+Location: <%= event.location %><br>
+<% creator = User.find(event.creator_id) %>
+Host: <%= creator.name %><br><br>
