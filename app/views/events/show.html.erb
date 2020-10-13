@@ -3,7 +3,7 @@
   <li>Invitees: 
     <ul>
       <% @event.invitees.each do |invitee| %>
-        <li><%= invitee %></li>
+        <li><%= invitee.name %></li>
       <% end %>
     </ul>
   </li>   

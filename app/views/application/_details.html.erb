@@ -1,4 +1,4 @@
-Event name: <%= event.name %><br>
+Event name: <%= link_to event.name, event_path(event) %><br>
 Date: <%= event.date %><br>
 Location: <%= event.location %><br>
 <% creator = User.find(event.creator_id) %>
