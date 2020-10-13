@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-10-12
+  location: MyString
+  host_id: one
+
+two:
+  date: 2020-10-12
+  location: MyString
+  host_id: two

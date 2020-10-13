@@ -1,0 +1,8 @@
+<ul>
+  <% @user.events.each do |event| %>
+    <li>
+      <%= event.name %>
+      <%= event.date %>
+    </li>
+  <% end %>
+</ul>
