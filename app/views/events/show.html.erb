@@ -1,0 +1,18 @@
+<ul>
+  <li><%= @event.name %></li>
+  <li><%= @event.date %></li>
+  <li><%= @event.location %></li>
+  <% creator = User.find(@event.creator_id) %>
+  <li>Host:<%= creator.name %></li>
+  <li>Invitees: 
+    <ul>
+      <% @event.invitees.each do |invitee| %>
+        <li><%= invitee %></li>
+      <% end %>
+    </ul>
+  </li>   
+</ul>
+
+<% if logged_in? %>
+  <%= link_to 'View all my events', user_path(current_user) %>
+<% end %>

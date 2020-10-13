@@ -1,8 +1,23 @@
+<h2>My events</h2>
+<h3>Hosted events</h3>
 <ul>
-  <% @user.events.each do |event| %>
+  <% @user.created_events.each do |event| %>
     <li>
-      <%= event.name %>
-      <%= event.date %>
+      Event name: <%= event.name %><br>
+      Date: <%= event.date %><br>
+      Location: <%= event.location %><br>
+    </li>
+  <% end %>
+</ul>
+<h3>Invited events</h3>
+<ul>
+  <% @user.invited_events.each do |event| %>
+  <li>
+      Event name: <%= event.name %><br>
+      Date: <%= event.date %><br>
+      Location: <%= event.location %><br>
+      <% creator = User.find(event.creator_id) %>
+      Host: <%= creator.name %><br>
     </li>
   <% end %>
 </ul>

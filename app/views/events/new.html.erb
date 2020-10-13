@@ -15,5 +15,7 @@
   <%= f.text_field :name, placeholder: 'Awesome party' %>
   <%= f.label :date %>
   <%= f.date_field :date, value: 'Event date', min: Date.today %>
+  <%= f.label :location %>
+  <%= f.text_field :location, placeholder: 'The Warehouse' %>
   <%= f.submit %>
 <% end %>

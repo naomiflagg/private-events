@@ -1,8 +1,13 @@
+<h2>All events</h2>
+
 <ul>
   <% @events.each do |event| %>
     <li>
-      <%= event.name %>
-      <%= event.date %>
+      Name: <%= event.name %><br>
+      Date: <%= event.date %><br>
+      Location: <%= event.location %><br>
+      <% creator = User.find(event.creator_id) %>
+      Host: <%= creator.name %><br>
     </li>
   <% end %>
 </ul>

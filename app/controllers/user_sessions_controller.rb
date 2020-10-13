@@ -3,16 +3,17 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    @current_user = User.find_by_email(params[:email])
-    if @current_user
-      session[:user_id] = current_user.id
-      redirect_back_or_to(events_path)
+    @user = User.find_by_email(params[:email])
+    if @user
+      session[:user_id] = @user.id
+      redirect_to events_path
     else
       render 'new'
     end
   end
 
   def destroy
-    redirect_to root
+    session[:user_id] = nil
+    redirect_to root_path
   end
 end

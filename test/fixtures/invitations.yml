@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_invitee: one
+  invited_event: one
+  rsvp: false
+
+two:
+  event_invitee: two
+  invited_event: two
+  rsvp: false

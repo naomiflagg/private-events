@@ -11,14 +11,17 @@
 
   <body>
     <h1>Extraordinary Events</h1>
-    <% if @current_user %>
+    <% if logged_in? %>
       <h3>Current user:</h3>
-      <%= @current_user.name %>
+      <%= current_user.name %>
       <%= link_to 'Sign out', logout_path %>
+      <%= link_to 'Create event', new_event_path %>
+      <%= link_to 'View my events', user_path(current_user) %>
     <% else %>
       <%= link_to 'Sign in', login_path %>
       <%= link_to 'Sign up', new_user_path %>
     <% end %>
+    <%= link_to 'View all events', events_path %>
     <%= yield %>
   </body>
 </html>
